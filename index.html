@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodilon Drinks | Home</title>
+    <style>
+        /* --- 🎨 GLOBAL STYLES --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            color: #333;
+        }
+
+        /* --- 🏛️ STICKY HEADER --- */
+        header {
+            position: sticky;
+            top: 0;
+            background: #4A0404; /* Kodilon Wine Red */
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .search-bar {
+            width: 40%;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+        }
+
+        /* --- 🏷️ CATEGORY SECTION --- */
+        .section-title {
+            padding: 30px 5% 10px;
+            font-size: 1.5rem;
+            color: #4A0404;
+            font-weight: bold;
+        }
+
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 10px 5% 40px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background-color: #000;
+        }
+
+        /* The Dark Overlay */
+        .category-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: 0.3s;
+        }
+
+        .category-card:hover::before {
+            background: rgba(74, 4, 4, 0.7);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-content {
+            position: absolute;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            width: 80%;
+        }
+
+        .category-name {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #BF953F; /* Gold Line */
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+        }
+
+        .category-subs {
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- 📦 PRODUCT GRID --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 20px 5%;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            height: 200px;
+            width: 100%;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4A0404;
+            margin: 10px 0;
+        }
+
+        .add-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: #4A0404;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-premium {
+            background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #AA771C);
+            color: #4A0404;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">KODILON</a>
+        <input type="text" class="search-bar" placeholder="Search for your favorite bottle...">
+        <div style="cursor: pointer;">🛒 <span>0</span></div>
+    </header>
+
+    <h2 class="section-title">Shop by Category</h2>
+    
+    <section class="category-container">
+        <a href="cognac.html" class="category-card">
+            <img src="Cognac2.jpg" alt="Cognac">
+            <div class="category-content">
+                <span class="category-name">Cognac</span>
+                <span class="category-subs">VS • VSOP • XO • Prestige</span>
+            </div>
+        </a>
+
+        <a href="whisky.html" class="category-card">
+            <img src="Whisky2.jpg" alt="Whisky">
+            <div class="category-content">
+                <span class="category-name">Whisky</span>
+                <span class="category-subs">Single Malt • Scotch • Bourbon</span>
+            </div>
+        </a>
+
+        <a href="wine.html" class="category-card">
+            <img src="Wine2.jpg" alt="Wine">
+            <div class="category-content">
+                <span class="category-name">Wine</span>
+                <span class="category-subs">Merlot • Rosé • Bordeaux</span>
+            </div>
+        </a>
+    </section>
+
+    <h2 class="section-title">Premium Selection</h2>
+    
+    <div class="product-grid">
+        <div class="card" style="border: 1px solid gold;">
+            <a href="Domp.html" style="text-decoration: none; color: inherit;">
+                <img src="Dom P.jpg" alt="Dom Perignon">
+                <h3>Dom Perignon</h3>
+                <div class="price">₦520,000</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn btn-premium">Add to Cart</button>
+        </div>
+
+        <div class="card"style="border: 1px solid gold;">
+            <a href="hennessy.html" style="text-decoration: none; color: inherit;">
+            <img src="Hennessy.jpg" alt="Hennessy">
+            <h3>Hennessy VSOP</h3>
+            <div class="price">₦95,000</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="card"style="border: 1px solid gold;">
+            <a href="jameson.html" style="text-decoration: none; color: inherit;">
+            <img src="Jameson.jpg" alt="Jameson">
+            <h3>Jameson Whiskey</h3>
+            <div class="price">₦19,840</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="card"style="border: 1px solid gold;">
+            <a href="martell.html" style="text-decoration: none; color: inherit;">
+            <img src="Martell.jpg" alt="Martell">
+            <h3>Martell Blue Swift</h3>
+            <div class="price">₦110,000</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn btn-premium">Add to Cart</button>
+        </div>
+
+        <div class="card"style="border: 1px solid gold;">
+            <a href="Agor.html" style="text-decoration: none; color: inherit;">
+            <img src="Agor.jpg" alt="Agor">
+            <h3>Agor Red Wine</h3>
+            <div class="price">₦8,500</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="card"style="border: 1px solid gold;">
+            <a href="Smirnoff.html" style="text-decoration: none; color: inherit;">
+            <img src="Smirnoff.jpg" alt="Smirnoff">
+            <h3>Smirnoff Ice Pack</h3>
+            <div class="price">₦7,200</div>
+            </a>
+            <label>Qty:</label>
+            <select style="width: 100%; margin-bottom: 10px; padding: 5px; border-radius: 5px;">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>12 (Full Case)</option>
+            </select>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+    </div>
+
+</body>
+</html>
